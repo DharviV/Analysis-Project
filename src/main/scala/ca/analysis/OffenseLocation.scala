@@ -1,18 +1,17 @@
-               package ca.analysis
+package ca.analysis
+import io.bespin.scala.util.Tokenizer
+import org.apache.spark.sql.SparkSession
 
-               import io.bespin.scala.util.Tokenizer
-               import org.apache.spark.sql.SparkSession
-
-               import org.apache.log4j._
-               import org.apache.hadoop.fs._
-               import org.apache.spark.SparkContext
-               import org.apache.spark.HashPartitioner
-               import org.apache.spark.SparkConf
-               import org.apache.spark.broadcast
-               import org.rogach.scallop._
-               import scala.collection.mutable
-               import org.apache.spark.sql.types.{DateType, IntegerType}
-               import org.apache.spark.sql.functions._
+import org.apache.log4j._
+import org.apache.hadoop.fs._
+import org.apache.spark.SparkContext
+import org.apache.spark.HashPartitioner
+import org.apache.spark.SparkConf
+import org.apache.spark.broadcast
+import org.rogach.scallop._
+import scala.collection.mutable
+import org.apache.spark.sql.types.{DateType, IntegerType}
+import org.apache.spark.sql.functions._
 
 
 
@@ -22,8 +21,8 @@ object OffenseLocation extends Tokenizer {
 
     val spark= SparkSession
       .builder()
-        .appName("Spark SQL basic example")
-          .config("spark.some.config.option", "some-value")
+        .appName("Category of Offense")
+          .config("spark.some.config.option", "configval")
             .getOrCreate()
 
               import spark.implicits._
